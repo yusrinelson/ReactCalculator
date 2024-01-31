@@ -11,7 +11,6 @@ export const ACTIONS = {
   EVALUATE: "evaluate"
 }
 function reducer(state, {type, payload}){
-  const {currentOperand} = state
 
   switch(type) {
     case ACTIONS.ADD_DIGIT:
@@ -24,12 +23,14 @@ function reducer(state, {type, payload}){
       }
       if (payload.digit === "0" && state.currentOperand === "0") 
         return state
+      if (payload.digit === "." && state.currentOperand == null) 
+        return state
       if (payload.digit === "." && state.currentOperand.includes(".")) 
         return state
 
       return {
         ...state,
-        currentOperand: `${currentOperand || ""}${payload.digit}`,
+        currentOperand: `${state.currentOperand || ""}${payload.digit}`,
       }
 
     case ACTIONS.CHOOSE_OPERATION:

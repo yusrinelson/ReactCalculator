@@ -4,7 +4,7 @@
 
 body{
     margin: 0;
-    background: linear-gradient(to right, #ff1e00, #0008ff );
+    background: linear-gradient(to right, #00fffb, #050bbc );
 }
 
 .calculator-grid {
@@ -17,7 +17,7 @@ body{
 .calculator-grid > button {
     cursor: pointer;
     font-size: 2rem;
-    border:  solid white;
+    border:  solid rgba(20, 0, 245, 0.211);
     outline: none;
     background-color: rgba(255, 255, 255, 0.711);
 }
